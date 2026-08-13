@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio website for Harsh Nagar" />
+    <title>Harsh Nagar | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="hero">
+      <nav class="nav container">
+        <a href="#top" class="logo">Harsh Nagar</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Developer | Problem Solver</p>
+          <h1>Building thoughtful digital experiences with clean code.</h1>
+          <p class="hero-text">
+            I’m Harsh Nagar, a passionate developer focused on creating modern,
+            user-friendly solutions that make an impact.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="avatar">HN</div>
+          <h3>Harsh Nagar</h3>
+          <p>Full-stack developer | web enthusiast | lifelong learner</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2>Turning ideas into practical solutions.</h2>
+        </div>
+        <div class="about-grid">
+          <p>
+            I enjoy working at the intersection of technology, design, and user
+            experience. My focus is on building reliable applications, learning
+            new tools quickly, and delivering value through thoughtful execution.
+          </p>
+          <div class="stats">
+            <div>
+              <strong>3+</strong>
+              <span>Years of learning and building</span>
+            </div>
+            <div>
+              <strong>10+</strong>
+              <span>Projects and experiments</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Commitment to quality</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section section-alt">
+        <div class="container reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Skills</p>
+            <h2>Tools and technologies I work with.</h2>
+          </div>
+          <div class="skills-grid">
+            <div class="card reveal">
+              <h3>Frontend</h3>
+              <p>HTML, CSS, JavaScript, React</p>
+            </div>
+            <div class="card reveal">
+              <h3>Backend</h3>
+              <p>Node.js, Python, REST APIs</p>
+            </div>
+            <div class="card reveal">
+              <h3>Data & Tools</h3>
+              <p>SQL, Git, GitHub, Agile workflows</p>
+            </div>
+            <div class="card reveal">
+              <h3>Design</h3>
+              <p>UI principles, responsive interfaces, simple UX</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected work and ideas.</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <h3>Portfolio Website</h3>
+            <p>Designed and built a polished personal portfolio site to present work clearly and professionally.</p>
+          </article>
+          <article class="project-card reveal">
+            <h3>Task Dashboard</h3>
+            <p>Created a productivity dashboard with reusable components and a clean, modern interface.</p>
+          </article>
+          <article class="project-card reveal">
+            <h3>Developer Blog</h3>
+            <p>Built a content-driven website to share technical insights, learning notes, and project updates.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container contact-box reveal">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s build something great together.</h2>
+          </div>
+          <a class="btn btn-primary" href="mailto:ngrharsh078@gmail.com">Email Me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> Harsh Nagar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
