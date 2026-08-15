@@ -243,17 +243,17 @@
           </div>
 
           <div class="projects-grid">
-            <!-- Project 0: Student Management System -->
-            <article class="project-card card">
+            <!-- Project 1: Student Management System -->
+            <article class="project-card card clickable-card" onclick="window.open('student-management-system/index.html', '_blank')">
               <div class="project-header">
                 <div class="project-folder">
                   <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div class="project-links">
-                  <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="View Source Code">
+                  <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener" aria-label="View Source Code" onclick="event.stopPropagation()">
                     <i class="fa-brands fa-github"></i>
                   </a>
-                  <a href="student-management-system/index.html" target="_blank" rel="noopener" aria-label="Live Demo App">
+                  <a href="student-management-system/index.html" target="_blank" rel="noopener" aria-label="Live Demo App" onclick="event.stopPropagation()">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 </div>
@@ -271,85 +271,116 @@
                 <span>CRUD Pipeline</span>
                 <span>CSV Export</span>
               </div>
+
+              <div class="card-action-bar">
+                <a href="student-management-system/index.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.stopPropagation()">
+                  <i class="fa-solid fa-play"></i> Launch App
+                </a>
+              </div>
             </article>
 
-            <!-- Project 1 -->
-            <article class="project-card card">
+            <!-- Project 2: Technical Insights Platform -->
+            <article class="project-card card clickable-card" onclick="window.open('technical-insights-platform/index.html', '_blank')">
               <div class="project-header">
                 <div class="project-folder">
-                  <i class="fa-regular fa-folder-open"></i>
+                  <i class="fa-solid fa-newspaper"></i>
                 </div>
                 <div class="project-links">
-                  <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener" aria-label="View Source Code">
+                  <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener" aria-label="View Source Code" onclick="event.stopPropagation()">
                     <i class="fa-brands fa-github"></i>
                   </a>
-                  <a href="https://harsh0675.github.io/Portfolio/" target="_blank" rel="noopener" aria-label="Live Demo">
+                  <a href="technical-insights-platform/index.html" target="_blank" rel="noopener" aria-label="Live Demo App" onclick="event.stopPropagation()">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-
-              <h3 class="project-title">Interactive Portfolio Website</h3>
-              <p class="project-description">
-                Engineered a responsive developer portfolio featuring an interactive HTML5 canvas particle background, glassmorphism UI components, dynamic theme styling, and GitHub Pages deployment.
-              </p>
-
-              <div class="project-tech">
-                <span>HTML5</span>
-                <span>CSS3 / Glassmorphism</span>
-                <span>JavaScript</span>
-                <span>GitHub Pages</span>
-              </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="project-card card">
-              <div class="project-header">
-                <div class="project-folder">
-                  <i class="fa-regular fa-folder-open"></i>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="View Source Code">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-
-              <h3 class="project-title">Full-Stack Productivity Dashboard</h3>
-              <p class="project-description">
-                Developed a clean productivity application with task categorization, real-time status filtering, state persistence, and modular component architecture.
-              </p>
-
-              <div class="project-tech">
-                <span>JavaScript</span>
-                <span>REST API</span>
-                <span>Node.js</span>
-                <span>CSS Grid</span>
-              </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="project-card card">
-              <div class="project-header">
-                <div class="project-folder">
-                  <i class="fa-regular fa-folder-open"></i>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="View Source Code">
-                    <i class="fa-brands fa-github"></i>
                   </a>
                 </div>
               </div>
 
               <h3 class="project-title">Technical Insights Platform</h3>
               <p class="project-description">
-                A content-focused web platform designed for publishing developer guides, engineering notes, and software architecture articles with optimized typography and fast load speeds.
+                A content-focused web platform designed for publishing developer guides, engineering notes, and software architecture articles with an interactive modal reader engine, topic filters, and LocalStorage bookmarking.
               </p>
 
               <div class="project-tech">
-                <span>HTML/CSS</span>
                 <span>JavaScript</span>
-                <span>SEO Best Practices</span>
+                <span>Architecture Notes</span>
+                <span>Reader Modal</span>
+                <span>Bookmarking</span>
+              </div>
+
+              <div class="card-action-bar">
+                <a href="technical-insights-platform/index.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.stopPropagation()">
+                  <i class="fa-solid fa-play"></i> Launch App
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: Full-Stack Productivity Dashboard -->
+            <article class="project-card card clickable-card" onclick="window.open('productivity-dashboard/index.html', '_blank')">
+              <div class="project-header">
+                <div class="project-folder">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener" aria-label="View Source Code" onclick="event.stopPropagation()">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="productivity-dashboard/index.html" target="_blank" rel="noopener" aria-label="Live Demo App" onclick="event.stopPropagation()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Full-Stack Productivity Dashboard</h3>
+              <p class="project-description">
+                Kanban &amp; list workflow management dashboard with task categorization, real-time priority badges, task completion progress visualizer, search filters, and persistent local state.
+              </p>
+
+              <div class="project-tech">
+                <span>Kanban Board</span>
+                <span>Priority Filters</span>
+                <span>Progress Bar</span>
+                <span>LocalStorage</span>
+              </div>
+
+              <div class="card-action-bar">
+                <a href="productivity-dashboard/index.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.stopPropagation()">
+                  <i class="fa-solid fa-play"></i> Launch App
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: Weather Analytics Dashboard -->
+            <article class="project-card card clickable-card" onclick="window.open('weather-analytics-dashboard/index.html', '_blank')">
+              <div class="project-header">
+                <div class="project-folder">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener" aria-label="View Source Code" onclick="event.stopPropagation()">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="weather-analytics-dashboard/index.html" target="_blank" rel="noopener" aria-label="Live Demo App" onclick="event.stopPropagation()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Real-Time Weather &amp; Climate Analytics</h3>
+              <p class="project-description">
+                Interactive weather analytics platform featuring global city location search, &deg;C / &deg;F temperature unit toggling, 5-day meteorological forecasts, hourly temperature visualizer bar chart, and environmental AQI metrics.
+              </p>
+
+              <div class="project-tech">
+                <span>Weather Engine</span>
+                <span>5-Day Forecast</span>
+                <span>Unit Converter</span>
+                <span>Hourly Visualizer</span>
+              </div>
+
+              <div class="card-action-bar">
+                <a href="weather-analytics-dashboard/index.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm" onclick="event.stopPropagation()">
+                  <i class="fa-solid fa-play"></i> Launch App
+                </a>
               </div>
             </article>
           </div>

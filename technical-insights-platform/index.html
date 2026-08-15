@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechInsights | Software Engineering & Architecture Platform</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="container header-container">
+        <div class="brand">
+          <div class="brand-icon"><i class="fa-solid fa-newspaper"></i></div>
+          <div>
+            <h1 class="brand-title">TechInsights <span class="badge-tag">Dev Platform</span></h1>
+            <p class="brand-subtitle">Engineering Notes &amp; System Architecture</p>
+          </div>
+        </div>
+
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search articles by title, tag, or topic..."
+            class="form-control search-input"
+          />
+        </div>
+
+        <div class="header-actions">
+          <a href="../index.html" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+          </a>
+          <button class="btn btn-primary btn-sm" id="btn-publish-article">
+            <i class="fa-solid fa-pen-nib"></i> Publish Article
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Bar & Topic Pills -->
+    <nav class="nav-tabs-bar">
+      <div class="container tabs-container">
+        <div class="topic-filters" id="topic-filters">
+          <button class="filter-pill active" data-topic="all">All Articles</button>
+          <button class="filter-pill" data-topic="architecture">System Architecture</button>
+          <button class="filter-pill" data-topic="frontend">Frontend &amp; UX</button>
+          <button class="filter-pill" data-topic="backend">Backend &amp; APIs</button>
+          <button class="filter-pill" data-topic="devops">DevOps &amp; Cloud</button>
+          <button class="filter-pill" data-topic="bookmarks"><i class="fa-solid fa-bookmark"></i> Saved Bookmarks</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="container main-content">
+      
+      <!-- Flagship Featured Article Banner -->
+      <section class="featured-banner card" id="featured-banner">
+        <!-- Dynamically rendered featured article -->
+      </section>
+
+      <!-- Articles Section Header -->
+      <div class="section-header">
+        <div>
+          <h2><i class="fa-solid fa-layer-group"></i> Technical Guides &amp; Architecture Notes</h2>
+          <p class="text-muted" id="article-count-label">Showing all articles</p>
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid" id="articles-grid">
+        <!-- Dynamically populated articles -->
+      </div>
+    </main>
+
+    <!-- MODAL 1: FULL ARTICLE READER MODAL -->
+    <div class="modal-overlay" id="reader-modal">
+      <div class="modal-card modal-lg">
+        <button class="modal-close" id="reader-close-btn">&times;</button>
+        
+        <div class="reader-header" id="reader-header">
+          <!-- Dynamically populated article header -->
+        </div>
+
+        <div class="reader-body" id="reader-body">
+          <!-- Dynamically populated article content -->
+        </div>
+
+        <div class="modal-footer reader-footer">
+          <div class="reader-actions">
+            <button class="btn btn-secondary btn-sm" id="btn-like-article">
+              <i class="fa-solid fa-heart text-danger"></i> <span id="like-count">0</span> Likes
+            </button>
+            <button class="btn btn-secondary btn-sm" id="btn-bookmark-modal">
+              <i class="fa-regular fa-bookmark"></i> <span id="bookmark-text">Bookmark</span>
+            </button>
+          </div>
+          <button class="btn btn-primary btn-sm" id="reader-done-btn">Close Article</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 2: PUBLISH NEW ARTICLE MODAL -->
+    <div class="modal-overlay" id="publish-modal">
+      <div class="modal-card">
+        <button class="modal-close" id="publish-close-btn">&times;</button>
+        <div class="modal-header">
+          <div class="modal-header-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div>
+            <h3>Publish Technical Article</h3>
+            <p class="text-muted small">Share your engineering insights with the community</p>
+          </div>
+        </div>
+
+        <form id="publish-form" class="publish-form">
+          <div class="form-group">
+            <label for="input-title">Article Title *</label>
+            <input type="text" id="input-title" required placeholder="e.g. Scaling Redis for Distributed Caching" class="form-control" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-topic">Topic Category *</label>
+              <select id="input-topic" required class="form-control">
+                <option value="architecture">System Architecture</option>
+                <option value="frontend">Frontend &amp; UX</option>
+                <option value="backend">Backend &amp; APIs</option>
+                <option value="devops">DevOps &amp; Cloud</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-readtime">Est. Read Time *</label>
+              <input type="text" id="input-readtime" required placeholder="e.g. 5 min read" class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-author">Author Name *</label>
+              <input type="text" id="input-author" required placeholder="Harsh Nagar" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="input-tags">Tags (comma separated) *</label>
+              <input type="text" id="input-tags" required placeholder="Redis, Caching, Node.js" class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-summary">Short Executive Summary *</label>
+            <textarea id="input-summary" required rows="2" placeholder="Brief 2-sentence summary of the key takeaways..." class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="input-content">Full Article Content (Markdown / HTML text) *</label>
+            <textarea id="input-content" required rows="6" placeholder="Write full technical article here..." class="form-control"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="publish-cancel-btn">Cancel</button>
+            <button type="submit" class="btn btn-primary">Publish Article</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Action completed!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

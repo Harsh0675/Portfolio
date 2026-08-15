@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskPulse | Productivity &amp; Workflow Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="container header-container">
+        <div class="brand">
+          <div class="brand-icon"><i class="fa-solid fa-list-check"></i></div>
+          <div>
+            <h1 class="brand-title">TaskPulse <span class="badge-tag">Productivity Hub</span></h1>
+            <p class="brand-subtitle">Kanban Workflow &amp; Task Manager</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <a href="../index.html" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+          </a>
+          <button class="btn btn-primary btn-sm" id="btn-add-task">
+            <i class="fa-solid fa-plus"></i> New Task
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container main-content">
+      
+      <!-- Metrics & Progress Overview -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon icon-blue"><i class="fa-solid fa-tasks"></i></div>
+          <div class="metric-data">
+            <span class="metric-label">Total Tasks</span>
+            <h3 class="metric-value" id="stat-total">0</h3>
+            <span class="metric-sub">Active Workspace</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon icon-emerald"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="metric-data">
+            <span class="metric-label">Completed</span>
+            <h3 class="metric-value" id="stat-completed">0</h3>
+            <span class="metric-sub text-success"><i class="fa-solid fa-arrow-trend-up"></i> Done</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon icon-amber"><i class="fa-solid fa-spinner"></i></div>
+          <div class="metric-data">
+            <span class="metric-label">In Progress</span>
+            <h3 class="metric-value" id="stat-in-progress">0</h3>
+            <span class="metric-sub">Under Review</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon icon-purple"><i class="fa-solid fa-fire"></i></div>
+          <div class="metric-data">
+            <span class="metric-label">High Priority</span>
+            <h3 class="metric-value" id="stat-high-priority">0</h3>
+            <span class="metric-sub text-danger">Urgent Action</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completion Bar Card -->
+      <div class="card progress-card">
+        <div class="progress-info">
+          <span><i class="fa-solid fa-chart-line"></i> Overall Completion Rate</span>
+          <strong id="progress-pct-text">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill-bar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Filter Controls & View Toggle -->
+      <div class="card filter-card">
+        <div class="filter-flex">
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search tasks by title or tag..."
+              class="form-control search-input"
+            />
+          </div>
+
+          <div class="filter-controls">
+            <select id="filter-category" class="form-control">
+              <option value="">All Categories</option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Database">Database</option>
+              <option value="DevOps">DevOps</option>
+            </select>
+
+            <select id="filter-priority" class="form-control">
+              <option value="">All Priorities</option>
+              <option value="High">High Priority</option>
+              <option value="Medium">Medium Priority</option>
+              <option value="Low">Low Priority</option>
+            </select>
+
+            <button class="btn btn-secondary btn-icon" id="reset-filters-btn" title="Reset Filters">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kanban Columns View -->
+      <div class="kanban-grid" id="kanban-view">
+        <!-- Column 1: To Do -->
+        <div class="kanban-col card">
+          <div class="col-header col-todo">
+            <h3><i class="fa-regular fa-circle"></i> To Do</h3>
+            <span class="col-count" id="count-todo">0</span>
+          </div>
+          <div class="col-tasks" id="col-todo-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Column 2: In Progress -->
+        <div class="kanban-col card">
+          <div class="col-header col-progress">
+            <h3><i class="fa-solid fa-spinner"></i> In Progress</h3>
+            <span class="col-count" id="count-progress">0</span>
+          </div>
+          <div class="col-tasks" id="col-progress-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Column 3: Completed -->
+        <div class="kanban-col card">
+          <div class="col-header col-done">
+            <h3><i class="fa-solid fa-circle-check"></i> Completed</h3>
+            <span class="col-count" id="count-done">0</span>
+          </div>
+          <div class="col-tasks" id="col-done-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL: ADD / EDIT TASK MODAL -->
+    <div class="modal-overlay" id="task-modal">
+      <div class="modal-card">
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+        <div class="modal-header">
+          <div class="modal-header-icon"><i class="fa-solid fa-tasks"></i></div>
+          <div>
+            <h3 id="modal-title">Create New Task</h3>
+            <p class="text-muted small">Enter task details and assignment properties</p>
+          </div>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <input type="hidden" id="task-id" />
+
+          <div class="form-group">
+            <label for="input-title">Task Title *</label>
+            <input type="text" id="input-title" required placeholder="e.g. Implement JWT Authentication Endpoint" class="form-control" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-category">Category *</label>
+              <select id="input-category" required class="form-control">
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Database">Database</option>
+                <option value="DevOps">DevOps</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-priority">Priority *</label>
+              <select id="input-priority" required class="form-control">
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="input-status">Initial Status *</label>
+              <select id="input-status" required class="form-control">
+                <option value="todo">To Do</option>
+                <option value="progress">In Progress</option>
+                <option value="done">Completed</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-duedate">Due Date *</label>
+              <input type="date" id="input-duedate" required class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-desc">Task Description *</label>
+            <textarea id="input-desc" required rows="3" placeholder="Enter task specifications and requirements..." class="form-control"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="modal-cancel-btn">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="modal-submit-btn">Save Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Task saved successfully!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

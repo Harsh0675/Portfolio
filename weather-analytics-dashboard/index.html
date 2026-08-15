@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AtmosPulse | Real-Time Weather &amp; Analytics Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="container header-container">
+        <div class="brand">
+          <div class="brand-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+          <div>
+            <h1 class="brand-title">AtmosPulse <span class="badge-tag">Weather Engine</span></h1>
+            <p class="brand-subtitle">Real-Time Climate Metrics &amp; Forecast Analytics</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="unit-toggle">
+            <button class="unit-btn active" id="btn-unit-c">&deg;C</button>
+            <button class="unit-btn" id="btn-unit-f">&deg;F</button>
+          </div>
+
+          <a href="../index.html" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- City Search & Popular Locations -->
+    <nav class="nav-tabs-bar">
+      <div class="container search-container">
+        <div class="search-input-wrapper">
+          <i class="fa-solid fa-location-dot search-icon"></i>
+          <input
+            type="text"
+            id="city-search-input"
+            placeholder="Search location (e.g. New Delhi, London, Tokyo, New York)..."
+            class="form-control search-input"
+          />
+        </div>
+
+        <div class="quick-cities" id="quick-cities">
+          <button class="city-pill active" data-city="New Delhi">New Delhi</button>
+          <button class="city-pill" data-city="London">London</button>
+          <button class="city-pill" data-city="Tokyo">Tokyo</button>
+          <button class="city-pill" data-city="New York">New York</button>
+          <button class="city-pill" data-city="Sydney">Sydney</button>
+          <button class="city-pill" data-city="Paris">Paris</button>
+          <button class="city-pill" data-city="San Francisco">San Francisco</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="container main-content">
+      
+      <!-- Current Weather Hero Card -->
+      <section class="current-weather-card card" id="current-weather-card">
+        <!-- Dynamically rendered current weather -->
+      </section>
+
+      <!-- Weather Metrics Grid -->
+      <div class="metrics-grid" id="weather-metrics-grid">
+        <!-- Dynamically rendered metrics -->
+      </div>
+
+      <!-- 5-Day Forecast & Hourly Section -->
+      <div class="dashboard-grid">
+        <div class="card forecast-box">
+          <div class="card-header">
+            <h3><i class="fa-regular fa-calendar-days"></i> 5-Day Meteorological Forecast</h3>
+            <span class="text-muted small">Daily High / Low Predictions</span>
+          </div>
+          <div class="forecast-list" id="forecast-list">
+            <!-- Dynamically populated forecast -->
+          </div>
+        </div>
+
+        <div class="card chart-box">
+          <div class="card-header">
+            <h3><i class="fa-solid fa-chart-area"></i> Hourly Temperature Visualizer</h3>
+            <span class="text-muted small">Next 24-Hour Trend</span>
+          </div>
+          <div class="hourly-bars" id="hourly-bars">
+            <!-- Dynamically populated hourly bars -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Weather data loaded!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
