@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Harsh Nagar - Full-Stack Developer & Software Engineer Portfolio" />
+    <title>Harsh Nagar | Software Developer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Interactive Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="#top" class="logo">
+          <span class="logo-accent">&lt;</span>Harsh Nagar<span class="logo-accent"> /&gt;</span>
+        </a>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="mailto:ngrharsh078@gmail.com" class="btn btn-sm btn-primary">Hire Me</a>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="top">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <div class="badge-status">
+              <span class="pulse-dot"></span>
+              <span>Available for new opportunities</span>
+            </div>
+
+            <h1 class="hero-title">
+              Crafting <span class="gradient-text">scalable web systems</span> &amp; modern user experiences.
+            </h1>
+
+            <p class="hero-text">
+              Hi, I’m <strong>Harsh Nagar</strong> — a Software Developer dedicated to writing clean, maintainable code and turning ideas into impactful digital products.
+            </p>
+
+            <div class="hero-tags">
+              <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="tech-tag"><i class="fa-brands fa-react"></i> React</span>
+              <span class="tech-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-tag"><i class="fa-solid fa-database"></i> SQL</span>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">
+                <span>View Projects</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a class="btn btn-secondary" href="#contact">
+                <i class="fa-regular fa-envelope"></i> <span>Get In Touch</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-card reveal">
+            <div class="card-glow"></div>
+            <div class="avatar-wrapper">
+              <div class="avatar">HN</div>
+              <span class="avatar-status" title="Online &amp; Ready"></span>
+            </div>
+            
+            <h3 class="profile-name">Harsh Nagar</h3>
+            <p class="profile-title">Full-Stack Developer</p>
+            <p class="profile-location"><i class="fa-solid fa-location-dot"></i> India</p>
+
+            <div class="profile-divider"></div>
+
+            <div class="social-links">
+              <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="mailto:ngrharsh078@gmail.com" aria-label="Email Me">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="#contact" aria-label="Contact Section">
+                <i class="fa-solid fa-paper-plane"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-down" aria-label="Scroll to About Section">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <div class="container reveal">
+          <div class="section-heading text-center">
+            <p class="eyebrow"><i class="fa-solid fa-user"></i> About Me</p>
+            <h2>Passionate about code, architecture, and design.</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                I am a software developer with a strong foundation in full-stack web development. I thrive on solving complex technical challenges, building robust RESTful services, and crafting accessible, highly responsive user interfaces.
+              </p>
+              <p>
+                Whether designing database schemas or engineering interactive frontends, my focus is always on quality, performance, and delivering real value to end-users.
+              </p>
+
+              <div class="highlights">
+                <div class="highlight-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Clean &amp; Modular Code Architecture</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Responsive &amp; Accessible UI/UX</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-check-circle"></i>
+                  <span>Agile &amp; Collaborative Workflow</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+                <strong class="stat-number">3+</strong>
+                <span class="stat-label">Years of Coding &amp; Growth</span>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+                <strong class="stat-number">10+</strong>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <strong class="stat-number">100%</strong>
+                <span class="stat-label">Commitment to Quality</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section section-alt">
+        <div class="container reveal">
+          <div class="section-heading text-center">
+            <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Technical Stack</p>
+            <h2>Technologies &amp; capabilities.</h2>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-category card">
+              <div class="category-header">
+                <i class="fa-solid fa-desktop category-icon"></i>
+                <h3>Frontend</h3>
+              </div>
+              <ul class="skill-list">
+                <li><i class="fa-brands fa-html5"></i> HTML5 &amp; Semantic Web</li>
+                <li><i class="fa-brands fa-css3-alt"></i> Modern CSS3 &amp; Flex/Grid</li>
+                <li><i class="fa-brands fa-js"></i> JavaScript (ES6+)</li>
+                <li><i class="fa-brands fa-react"></i> React &amp; Modern UI</li>
+              </ul>
+            </div>
+
+            <div class="skill-category card">
+              <div class="category-header">
+                <i class="fa-solid fa-server category-icon"></i>
+                <h3>Backend &amp; APIs</h3>
+              </div>
+              <ul class="skill-list">
+                <li><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</li>
+                <li><i class="fa-brands fa-python"></i> Python</li>
+                <li><i class="fa-solid fa-network-wired"></i> RESTful API Design</li>
+                <li><i class="fa-solid fa-lock"></i> Authentication &amp; Security</li>
+              </ul>
+            </div>
+
+            <div class="skill-category card">
+              <div class="category-header">
+                <i class="fa-solid fa-database category-icon"></i>
+                <h3>Database &amp; Tools</h3>
+              </div>
+              <ul class="skill-list">
+                <li><i class="fa-solid fa-database"></i> SQL / Relational DBs</li>
+                <li><i class="fa-brands fa-git-alt"></i> Git &amp; Version Control</li>
+                <li><i class="fa-brands fa-github"></i> GitHub Actions &amp; CI/CD</li>
+                <li><i class="fa-solid fa-terminal"></i> Command Line &amp; Scripting</li>
+              </ul>
+            </div>
+
+            <div class="skill-category card">
+              <div class="category-header">
+                <i class="fa-solid fa-wand-magic-sparkles category-icon"></i>
+                <h3>Core Engineering</h3>
+              </div>
+              <ul class="skill-list">
+                <li><i class="fa-solid fa-diagram-project"></i> Data Structures &amp; Algo</li>
+                <li><i class="fa-solid fa-gauge-high"></i> Web Performance Tuning</li>
+                <li><i class="fa-solid fa-mobile-screen"></i> Responsive Web Design</li>
+                <li><i class="fa-solid fa-bug"></i> Debugging &amp; Testing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <div class="container reveal">
+          <div class="section-heading text-center">
+            <p class="eyebrow"><i class="fa-solid fa-briefcase"></i> Featured Projects</p>
+            <h2>Selected engineering work.</h2>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 0: Student Management System -->
+            <article class="project-card card">
+              <div class="project-header">
+                <div class="project-folder">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="View Source Code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="../student-management-system/index.html" target="_blank" rel="noopener" aria-label="Live Demo App">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">College Student Management System</h3>
+              <p class="project-description">
+                Comprehensive web application featuring full student CRUD management, real-time search &amp; filtering, department attendance tracking, GPA analytics, transcript generation, and CSV data export.
+              </p>
+
+              <div class="project-tech">
+                <span>JavaScript ES6+</span>
+                <span>HTML5 / CSS3</span>
+                <span>LocalStorage API</span>
+                <span>CRUD Pipeline</span>
+                <span>CSV Export</span>
+              </div>
+            </article>
+
+            <!-- Project 1 -->
+            <article class="project-card card">
+              <div class="project-header">
+                <div class="project-folder">
+                  <i class="fa-regular fa-folder-open"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener" aria-label="View Source Code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="https://harsh0675.github.io/Portfolio/" target="_blank" rel="noopener" aria-label="Live Demo">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Interactive Portfolio Website</h3>
+              <p class="project-description">
+                Engineered a responsive developer portfolio featuring an interactive HTML5 canvas particle background, glassmorphism UI components, dynamic theme styling, and GitHub Pages deployment.
+              </p>
+
+              <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3 / Glassmorphism</span>
+                <span>JavaScript</span>
+                <span>GitHub Pages</span>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card card">
+              <div class="project-header">
+                <div class="project-folder">
+                  <i class="fa-regular fa-folder-open"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="View Source Code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Full-Stack Productivity Dashboard</h3>
+              <p class="project-description">
+                Developed a clean productivity application with task categorization, real-time status filtering, state persistence, and modular component architecture.
+              </p>
+
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>REST API</span>
+                <span>Node.js</span>
+                <span>CSS Grid</span>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card card">
+              <div class="project-header">
+                <div class="project-folder">
+                  <i class="fa-regular fa-folder-open"></i>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Harsh0675" target="_blank" rel="noopener" aria-label="View Source Code">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="project-title">Technical Insights Platform</h3>
+              <p class="project-description">
+                A content-focused web platform designed for publishing developer guides, engineering notes, and software architecture articles with optimized typography and fast load speeds.
+              </p>
+
+              <div class="project-tech">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>SEO Best Practices</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section section-alt">
+        <div class="container reveal">
+          <div class="contact-box card">
+            <div class="contact-content">
+              <p class="eyebrow"><i class="fa-solid fa-paper-plane"></i> Get In Touch</p>
+              <h2>Let’s build something extraordinary together.</h2>
+              <p class="contact-text">
+                Whether you have a question, a project proposal, or just want to connect, feel free to reach out. My inbox is always open!
+              </p>
+            </div>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary btn-lg" href="mailto:ngrharsh078@gmail.com">
+                <i class="fa-solid fa-envelope"></i> Send Email
+              </a>
+              <button class="btn btn-secondary btn-lg" id="copy-email-btn">
+                <i class="fa-regular fa-copy"></i> <span id="copy-text">Copy Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>&copy; <span id="year"></span> Harsh Nagar. Built with passion &amp; clean code.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Harsh0675" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="mailto:ngrharsh078@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Email copied to clipboard!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
