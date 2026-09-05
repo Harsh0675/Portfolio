@@ -6,6 +6,10 @@ A responsive personal portfolio website showcasing software projects, technical 
 
 https://harsh0675.github.io/Portfolio/
 
+## 📄 Resume
+
+[Download Harsh Nagar Resume](./Harsh_Nagar_Resume.pdf)
+
 ## ✨ Highlights
 
 - Responsive portfolio layout for desktop and mobile
@@ -34,9 +38,7 @@ Portfolio/
 ├── index.html       # Main portfolio page
 ├── styles.css       # Global styling and responsive design
 ├── script.js        # Interactive behavior
-├── student-management-system/
-├── technical-insights-platform/
-├── productivity-dashboard/
+├── Harsh_Nagar_Resume.pdf # Resume
 └── README.md        # Project documentation
 ```
 
@@ -65,4 +67,4 @@ MIT License.
 
 ## 👤 Author
 
-**Harsh0675** — https://github.com/Harsh0675
+**Harsh Nagar** — https://github.com/Harsh0675
