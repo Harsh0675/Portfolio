@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="description" content="Harsh Nagar - Full-Stack Developer & Software Engineer Portfolio" />
+    <meta name="theme-color" content="#0b1120" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://harshnagar.me/" />
+    <meta property="og:title" content="Harsh Nagar | Software Developer Portfolio" />
+    <meta property="og:description" content="Full-stack developer building scalable web systems and modern user experiences." />
+    <meta property="og:image" content="https://harshnagar.me/images/profile-photo.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://harshnagar.me/" />
     <title>Harsh Nagar | Software Developer Portfolio</title>
     
     <!-- Google Fonts -->
@@ -24,13 +32,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- Interactive Background Canvas -->
-    <canvas id="particle-canvas"></canvas>
-    <div class="cursor-glow" id="cursor-glow"></div>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
     <!-- Navigation Header -->
     <header class="header">
-      <nav class="nav container">
+      <nav class="nav container" aria-label="Main navigation">
         <a href="#top" class="logo">
           <span class="logo-accent">&lt;</span>Harsh Nagar<span class="logo-accent"> /&gt;</span>
         </a>
@@ -43,13 +52,13 @@
           <a href="mailto:ngrharsh078@gmail.com" class="btn btn-sm btn-primary">Hire Me</a>
         </div>
 
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- Hero Section -->
       <section class="hero" id="top">
         <div class="container hero-content">
@@ -92,7 +101,7 @@
             <div class="card-glow"></div>
             <div class="avatar-wrapper">
               <div class="avatar">
-                <img src="https://github.com/Harsh0675.png?size=400" alt="Harsh Nagar profile photo" />
+                <img src="images/profile-photo.jpg" alt="Harsh Nagar profile photo" width="400" height="400" fetchpriority="high" />
               </div>
               <span class="avatar-status" title="Online & Ready"></span>
             </div>
@@ -100,6 +109,9 @@
             <h3 class="profile-name">Harsh Nagar</h3>
             <p class="profile-title">Full-Stack Developer</p>
             <p class="profile-location"><i class="fa-solid fa-location-dot"></i> India</p>
+            <a class="profile-resume-link" href="Harsh_Nagar_Resume.pdf" download>
+              <i class="fa-solid fa-file-arrow-down"></i> View Resume
+            </a>
 
             <div class="profile-divider"></div>
 
@@ -250,7 +262,7 @@
 
           <div class="projects-grid">
             <!-- Project 1: Student Management System -->
-            <article class="project-card card clickable-card" onclick="window.open('student-management-system/index.html', '_blank')">
+            <article class="project-card card clickable-card" data-demo="student-management-system/index.html" tabindex="0" role="link">
               <div class="project-header">
                 <div class="project-folder">
                   <i class="fa-solid fa-graduation-cap"></i>
@@ -286,7 +298,7 @@
             </article>
 
             <!-- Project 2: Technical Insights Platform -->
-            <article class="project-card card clickable-card" onclick="window.open('technical-insights-platform/index.html', '_blank')">
+            <article class="project-card card clickable-card" data-demo="technical-insights-platform/index.html" tabindex="0" role="link">
               <div class="project-header">
                 <div class="project-folder">
                   <i class="fa-solid fa-newspaper"></i>
@@ -321,7 +333,7 @@
             </article>
 
             <!-- Project 3: Full-Stack Productivity Dashboard -->
-            <article class="project-card card clickable-card" onclick="window.open('productivity-dashboard/index.html', '_blank')">
+            <article class="project-card card clickable-card" data-demo="productivity-dashboard/index.html" tabindex="0" role="link">
               <div class="project-header">
                 <div class="project-folder">
                   <i class="fa-solid fa-list-check"></i>
@@ -356,7 +368,7 @@
             </article>
 
             <!-- Project 4: Weather Analytics Dashboard -->
-            <article class="project-card card clickable-card" onclick="window.open('weather-analytics-dashboard/index.html', '_blank')">
+            <article class="project-card card clickable-card" data-demo="weather-analytics-dashboard/index.html" tabindex="0" role="link">
               <div class="project-header">
                 <div class="project-folder">
                   <i class="fa-solid fa-cloud-sun"></i>
@@ -425,6 +437,7 @@
         <div class="footer-links">
           <a href="https://github.com/Harsh0675/Portfolio" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a>
           <a href="mailto:ngrharsh078@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a href="Harsh_Nagar_Resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
         </div>
       </div>
     </footer>

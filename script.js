@@ -19,8 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.getElementById("nav-menu");
 
   if (mobileToggle && navMenu) {
+    const closeMobileMenu = () => {
+      navMenu.classList.remove("active");
+      mobileToggle.setAttribute("aria-expanded", "false");
+      const icon = mobileToggle.querySelector("i");
+      if (icon) {
+        icon.classList.add("fa-bars");
+        icon.classList.remove("fa-xmark");
+      }
+    };
+
     mobileToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
+      const isOpen = navMenu.classList.toggle("active");
+      mobileToggle.setAttribute("aria-expanded", String(isOpen));
       const icon = mobileToggle.querySelector("i");
       if (icon) {
         icon.classList.toggle("fa-bars");
@@ -29,21 +40,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Close menu when clicking links
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        const icon = mobileToggle.querySelector("i");
-        if (icon) {
-          icon.classList.add("fa-bars");
-          icon.classList.remove("fa-xmark");
-        }
-      });
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
     });
+  }
+
+  document.querySelectorAll(".clickable-card").forEach((card) => {
+    const openDemo = () => window.open(card.dataset.demo, "_blank", "noopener");
+
+    card.addEventListener("click", (event) => {
+      if (!event.target.closest("a")) openDemo();
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openDemo();
+      }
+    });
+  });
+
+  const header = document.querySelector(".header");
+  if (header) {
+    const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 12);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
   }
 
   // 4. Interactive Particle Canvas Background
   const canvas = document.getElementById("particle-canvas");
-  if (canvas) {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (canvas && !reducedMotion) {
     const ctx = canvas.getContext("2d");
     let animationFrameId;
     let width = (canvas.width = window.innerWidth);
@@ -142,6 +169,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   reveals.forEach((el) => observer.observe(el));
+  if (reducedMotion) {
+    reveals.forEach((el) => el.classList.add("visible"));
+  }
 
   // 6. Copy Email to Clipboard
   const copyBtn = document.getElementById("copy-email-btn");
@@ -154,12 +184,19 @@ document.addEventListener("DOMContentLoaded", () => {
       navigator.clipboard.writeText(email).then(() => {
         if (copyText) copyText.textContent = "Copied!";
         if (toast) {
+          toast.textContent = "Email copied to clipboard!";
           toast.classList.add("show");
           setTimeout(() => toast.classList.remove("show"), 3000);
         }
         setTimeout(() => {
           if (copyText) copyText.textContent = "Copy Email";
         }, 2000);
+      }).catch(() => {
+        if (toast) {
+          toast.textContent = "Copy failed. Please select the email manually.";
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 3000);
+        }
       });
     });
   }

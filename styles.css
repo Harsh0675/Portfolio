@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -43,6 +44,25 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: #0b1120;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 /* Background Particle Canvas */
@@ -134,6 +154,11 @@ h3 {
   background: rgba(11, 17, 32, 0.75);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+}
+
+.header.scrolled {
+  background: rgba(11, 17, 32, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .nav {
@@ -311,6 +336,11 @@ h3 {
   box-shadow: var(--shadow-lg);
 }
 
+.clickable-card:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
 /* Hero Section */
 .hero {
   padding-top: 160px;
@@ -445,6 +475,23 @@ h3 {
 .profile-location {
   color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+.profile-resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.profile-resume-link:hover,
+.profile-resume-link:focus-visible {
+  color: var(--primary);
 }
 
 .profile-divider {
@@ -826,6 +873,99 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  #particle-canvas,
+  .cursor-glow,
+  .card-glow {
+    display: none;
+  }
+
+  .container {
+    width: min(100% - 2rem, 1200px);
+  }
+
+  .hero {
+    padding-top: 130px;
+    padding-bottom: 72px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .badge-status {
+    font-size: 0.76rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-tags {
+    gap: 0.45rem;
+    margin-bottom: 1.7rem;
+  }
+
+  .tech-tag {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .hero-actions {
+    gap: 0.7rem;
+  }
+
+  .hero-actions .btn-primary {
+    flex: 1 0 100%;
+  }
+
+  .hero-actions .btn-secondary {
+    flex: 1 1 calc(50% - 0.35rem);
+    padding: 0.75rem 0.9rem;
+    font-size: 0.86rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.85rem;
+  }
+
+  .card {
+    padding: 1.35rem;
+    border-radius: 18px;
+  }
+
+  .hero-card {
+    padding: 1.8rem 1.35rem;
+  }
+
+  .contact-box {
+    padding: 2rem 1.35rem;
+    gap: 1.5rem;
+  }
+
+  .contact-text {
+    font-size: 0.95rem;
+  }
+
+  .contact-actions {
+    gap: 0.7rem;
+  }
+
   .nav-menu {
     position: fixed;
     top: 80px;
@@ -834,10 +974,15 @@ h3 {
     background: rgba(11, 17, 32, 0.95);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 2rem;
+    gap: 1.2rem;
+    padding: 1.5rem 1rem 1.75rem;
     border-bottom: 1px solid var(--border);
     transform: translateY(-150%);
     transition: var(--transition);
+  }
+
+  .nav-menu .btn {
+    width: 100%;
   }
 
   .nav-menu.active {
@@ -846,11 +991,74 @@ h3 {
 
   .mobile-toggle {
     display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .footer-content {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+
+  .footer {
+    padding: 2rem 0;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    height: 72px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .hero-actions .btn-secondary {
+    gap: 0.4rem;
+    padding-inline: 0.65rem;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
